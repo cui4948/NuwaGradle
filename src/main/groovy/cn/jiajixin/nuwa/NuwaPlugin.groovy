@@ -124,7 +124,7 @@ class NuwaPlugin implements Plugin<Project> {
                                     if (NuwaSetUtils.isIncluded(path, includePackage)) {
                                         if (!NuwaSetUtils.isExcluded(path, excludeClass)) {
                                             def bytes = NuwaProcessor.processClass(inputFile)
-                                            path = path.split("${dirName}/")[1]
+                                            path = path.split("${dirName}"+"\\\\")[1]
                                             def hash = DigestUtils.shaHex(bytes)
                                             hashFile.append(NuwaMapUtils.format(path, hash))
 
